@@ -1,0 +1,717 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متحف النوبة</title>
+    <style>
+        /* أنماط عامة */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* الشريط العلوي */
+        .header {
+            background-color: #3b5998;
+            color: #fff;
+            padding: 15px 0;
+        }
+
+        .header h1 {
+            margin: 0;
+            text-align: center;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* الصفحة الرئيسية */
+        .hero {
+
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #0051ff;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #25407c;
+        }
+        /* قسم التاريخ */
+        .history {
+            background-color: #e1f5fe;
+        }
+        .history h2 {
+            text-align: center;
+        }
+        .history-details {
+            margin-top: 30px;
+        }
+        
+        /* قسم الزوار */
+        .visitors {
+            background-color: #ffffff;
+        }
+        .visitor-info h3 {
+            color: #004d99;
+        }
+        /* قسم الأخبار */
+        .news {
+            background-color: #f1f8e9;
+        }
+        .news-item {
+            background-color: #f9fbe7;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        /* الأقسام */
+        section {
+            padding: 50px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        section p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: auto;
+        }
+        #nubian-women {
+  background-color: #f4f4f4;
+  padding: 30px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+#nubian-women .container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#nubian-women h2 {
+  font-size: 2.5em;
+  color: #2a3d66;
+}
+
+#nubian-women h3 {
+  font-size: 1.8em;
+  color: #2a3d66;
+  margin-top: 20px;
+}
+
+#nubian-women p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  color: #555;
+}
+
+#nubian-women img {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+#nubian-events {
+  background-color: #e9ecef;
+  padding: 40px;
+  margin-top: 50px;
+}
+
+#nubian-events .container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#nubian-events h2 {
+  font-size: 2.5em;
+  color: #2a3d66;
+}
+
+#nubian-events p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.event {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event h3 {
+  font-size: 1.8em;
+  color: #007bff;
+}
+
+.event p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+.event strong {
+  color: #333;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+        /* معرض الصور */
+        .exhibits {
+            padding: 50px 0;
+            background-color: #f4f4f4;
+        }
+
+        .exhibits .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .exhibit-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .exhibit-item {
+            background-color: #fff;
+            border-radius: 8px;
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .exhibit-item:hover {
+            transform: scale(1.05);
+        }
+
+        .exhibit-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .show-more-btn {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        .show-more-btn:hover {
+            background-color: #218838;
+        }
+
+        .exhibit-details {
+            margin-top: 15px;
+            font-size: 1rem;
+            color: #555;
+            text-align: left;
+        }
+
+        /* النموذج */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        input, textarea, button {
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الشريط العلوي -->
+    <header  class="header">
+        <div class="container">
+            <h1>متحف النوبة</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">عن المتحف</a></li>
+                    <li><a href="#exhibits">المعروضات</a></li>
+                    <li><a href="#nubian-women">المرأة النوبية</a></li>
+                    <li><a href="#events">الفعاليات</a></li>
+                    <li><a href="#history">التاريخ</a></li>
+                    <li><a href="#visitors">الزوار</a></li>
+                    <li><a href="#news">الأخبار</a></li>
+                    <li><a href="#quiz">أختبر معرفتك عن الثقافه النوبيه</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- الصفحة الرئيسية -->
+<section style="background: url(fg.jpg) no-repeat center center/cover;" class="hero">
+    <div class="container">
+        <h2>رحلة في أعماق التاريخ</h2>
+        <b>
+            <p style="color: blue;">
+                استكشف التراث والثقافة النوبية في قلب أسوان حيث يتم جمع وتحليل القصص التي تحكي التاريخ العريق لهذا الشعب.
+                من المعابد القديمة إلى الفلكلور المتعدد، رحلة المتحف تعد نافذة لأزمنة قديمة عبر الأجيال المختلفة.
+                يعتبر متحف النوبة واحداً من أبرز المعالم الثقافية في مصر، حيث يقدم للزوار فرصة استثنائية لاكتشاف ثراء الحضارة النوبية
+                التي كانت مركزًا للحكم والتجارة في العصور القديمة.
+            </p>
+        </b>
+
+   
+
+    </div>
+</section>
+
+
+    <!-- قسم عن المتحف -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>عن المتحف</h2>
+            <p>متحف النوبة هو وجهة ثقافية لا تُعادل، حيث يجسد المدى التاريخي لثقافة النوبة من بداية العصور القديمة وحتى الحاضر. في المتحف، تجد القطع الفنية النادرة التي تحكي قصة حضارة كانت منذ زمن بعيد على ضفاف النيل، سواء في مصر أو السودان. كل قطعة تعرض في هذا المتحف تحكي تفاصيل حياة أناس عاشوا في تلك الأراضي منذ آلاف السنين، مما يجعل الزيارة إلى المتحف رحلة في أعماق التاريخ والماضي النابض بالحياة.</p>
+            <p>تأسس المتحف في عام 1997 في مدينة أسوان، ويُعتبر أحد المعالم الثقافية البارزة التي تحتفل بتاريخ وحضارة النوبة. يحتوي المتحف على مجموعة غنية من المعروضات التي تشمل الأدوات المنزلية، والتماثيل، والمجوهرات، واللوحات الجدارية التي تعود إلى العصور القديمة. تُظهر هذه المعروضات مدى إبداع وتميز النوبة في الفنون والحرف اليدوية.</p>
+            <img src="fuu.jpg" alt="متحف النوبة">
+        </div>
+    </section>
+
+    <!-- قسم التاريخ -->
+    <section id="history" class="history">
+        <div class="container">
+            <h2>التاريخ النوبى</h2>
+            <p>النوبة هي منطقة تاريخية تقع على ضفاف النيل في جنوب مصر وشمال السودان، ولها تاريخ طويل يمتد لآلاف السنين. كانت النوبة واحدة من أهم الحضارات القديمة التي نشأت في إفريقيا، واحتلت مكانة بارزة في تاريخ مصر القديم. على الرغم من انقطاع العلاقات بين النوبة والحضارات الكبرى الأخرى بسبب الحدود الجغرافية، إلا أن النوبة حافظت على هويتها الثقافية والفنية.</p>
+            <p>يرتبط تاريخ النوبة بالعديد من العوامل الثقافية، منها الدين والسياسة والتجارة. ففي العصور القديمة، كانت النوبة تشتهر بتجارة الذهب والموارد الأخرى، كما كانت مهدًا للعديد من الحضارات المدهشة مثل "مملكة كوش" و"مملكة نوباتيا". خلال فترة حكم الفراعنة، كان للنوبة دور هام في الحفاظ على الاستقرار في المنطقة. تقدم مقتنيات المتحف في أسوان نافذة لفهم هذه الحقبة الذهبية من التاريخ، وتعكس التفاعلات بين النوبة وبلاد النيل والشرق الأوسط.</p>
+        </div>
+    </section>
+
+    <!-- قسم المعروضات -->
+    <section id="exhibits" class="exhibits">
+        <div class="container">
+            <h2>المعروضات</h2>
+            <div class="exhibit-list">
+                <div class="exhibit-item">
+                    <img src="e1.jpg" alt="تمثال النوبة">
+                    <h3>تمثال الملك رمسيس الثاني</h3>
+                    <button class="show-more-btn" onclick="toggleDetails('exhibit1-details')">عرض التفاصيل</button>
+                    <div id="exhibit1-details" class="exhibit-details" style="display:none;">
+                        <p>تمثال ضخم يعود للملك رمسيس الثاني، ويعتبر من أبرز القطع في المتحف.</p>
+                    </div>
+                </div>
+                <div class="exhibit-item">
+                    <img src="e2.jpg" alt="تمثال النوبة">
+                    <h3>وعاء فخاري</h3>
+                    <button class="show-more-btn" onclick="toggleDetails('exhibit2-details')">عرض التفاصيل</button>
+                    <div id="exhibit2-details" class="exhibit-details" style="display:none;">
+                        <p>يشير إلى الأواني الفخارية التي كانت تستخدم في الحياة اليومية في النوبة.
+                        </p>
+                    </div>
+                </div>
+                <div class="exhibit-item">
+                    <img src="e3.jpg" alt="تمثال النوبة">
+                    <h3>قاعة الدوائر</h3>
+                    <button class="show-more-btn" onclick="toggleDetails('exhibit3-details')">عرض التفاصيل</button>
+                    <div id="exhibit3-details" class="exhibit-details" style="display:none;">
+                        <p>تعرض ثقافة الحياة النوبية القديمة من خلال مختلف القطع الفنية</p>
+                    </div>
+                </div>
+                <div class="exhibit-item">
+                    <img src="e4.jpg" alt="تمثال النوبة">
+                    <h3>الحديقة المتحف</h3>
+                    <button class="show-more-btn" onclick="toggleDetails('exhibit4-details')">عرض التفاصيل</button>
+                    <div id="exhibit4-details" class="exhibit-details" style="display:none;">
+                        <p>عرض للحديقة التي تحيط بالمتحف وتعد جزءاً من التصميم الجمالي له</p>
+                    </div>
+                </div>
+                <div class="exhibit-item">
+                    <img src="e5.jpg" alt="تمثال النوبة">
+                    <h3>الملك طاوَرِق - الأسرة الخامسة والعشرون</h3>
+                    <button class="show-more-btn" onclick="toggleDetails('exhibit5-details')">عرض التفاصيل</button>
+                    <div id="exhibit5-details" class="exhibit-details" style="display:none;">
+                        <p>تمثال للملك طاورق الذي كان من حكام النوبة القديمة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="nubian-women">
+        <div class="container">
+          <h2>المرأة النوبية</h2>
+          <p>المرأة النوبية هي جزء أساسي من التراث الثقافي والاجتماعي في المنطقة النوبية. تمتاز المرأة النوبية بقوة الشخصية، دورها البارز في المجتمع، وعلاقاتها العائلية المتينة.</p>
+          
+          <h3>دورها الاجتماعي والاقتصادي</h3>
+          <p>تعتبر المرأة النوبية مصدر القوة في العديد من المجالات بما في ذلك العمل في الزراعة، والتعليم، والأعمال اليدوية. هي أيضًا ركن أساسي في الحفاظ على تقاليد اللغة النوبية والفنون الشعبية.</p>
+      
+          <h3>المؤسسات والمبادرات لدعم المرأة النوبية</h3>
+          <p>تعمل العديد من المؤسسات المحلية والدولية على تعزيز حقوق المرأة النوبية من خلال مبادرات تهدف إلى توفير التعليم والفرص الاقتصادية وتعزيز الوعي بحقوق المرأة.</p>
+      
+
+        </div>
+      </section>
+      <section id="events">
+        <div class="container">
+          <h2>الفعاليات النوبية</h2>
+          <p>الفعاليات النوبية هي فرص للاحتفال بالثقافة والتراث النوبي، وتشمل الأنشطة الاجتماعية، الثقافية، والفنية التي تبرز دور المرأة في المجتمع. إليك بعض الفعاليات المميزة:</p>
+      
+          <div class="event">
+            <h3>مهرجان النوبة السنوي</h3>
+            <p>مهرجان يُحتفل به كل عام في مدينة أسوان، حيث يشارك فيه الآلاف من أبناء المجتمع النوبي. يركز المهرجان على الفنون التشكيلية، الموسيقى، والرقص التقليدي، مع مشاركة مميزة للنساء النوبية في الفعاليات.</p>
+            <p><strong>التاريخ:</strong> 15 ديسمبر 2024</p>
+            <p><strong>المكان:</strong> أسوان، مصر</p>
+          </div>
+      
+          <div class="event">
+            <h3>ورشة العمل الخاصة بالحرف اليدوية النوبية</h3>
+            <p>تستضيف العديد من المنظمات ورش عمل تهدف إلى تعليم الحرف اليدوية النوبيّة للنساء وتطوير مهاراتهن في الأعمال اليدوية التقليدية مثل صناعة السلال والملابس.</p>
+            <p><strong>التاريخ:</strong> 5 يناير 2025</p>
+            <p><strong>المكان:</strong> قرية أبو سمبل، مصر</p>
+          </div>
+      
+          <div class="event">
+            <h3>مؤتمر حقوق المرأة النوبية</h3>
+            <p>مؤتمر سنوي يهدف إلى تسليط الضوء على حقوق المرأة النوبية في المجتمع المصري والعمل على تعزيز مشاركتها السياسية والاجتماعية.</p>
+            <p><strong>التاريخ:</strong> 20 فبراير 2025</p>
+            <p><strong>المكان:</strong> القاهرة، مصر</p>
+          </div>
+      
+
+        </div>
+      </section>
+      
+    <!-- قسم الزوار -->
+    <section id="visitors" class="visitors">
+        <div class="container">
+            <h2>الزوار</h2>
+            <p>من خلال زيارة متحف النوبة، يمكن للزوار الاستمتاع بتجربة غنية وجذابة تجمع بين التعليم والمرح. يمكن للزوار الانغماس في تاريخ النوبة العريق من خلال المعروضات المتنوعة، كما يمكنهم المشاركة في ورش العمل والمحاضرات والجولات الإرشادية. هذه الأنشطة تتيح للزوار فرصة التعرف على التفاصيل الدقيقة لثقافة النوبة وتاريخها. المتحف أيضًا يستضيف فعاليات سنوية تشمل المهرجانات الثقافية التي تبرز الفن والفلكلور النوبى.</p>
+        </div>
+    </section>
+
+    <!-- قسم الأخبار -->
+    <section id="news" class="news">
+        <div class="container">
+            <h2>آخر الأخبار</h2>
+            <div class="news-item">
+                <h3>افتتاح معرض "التراث النوبى"</h3>
+                <p>تم افتتاح معرض "التراث النوبى" في متحف النوبة، الذي يضم مجموعة فريدة من القطع الأثرية التي تعكس التراث الغني لمجتمع النوبة. المعرض يسلط الضوء على التحف الفنية القديمة التي استخدمها سكان النوبة في حياتهم اليومية، ويعرض الأدوات المنزلية والمجوهرات والأزياء التي كانت جزءاً من ثقافتهم العريقة.</p>
+            </div>
+        </div>
+    </section>
+    <section id="quiz">
+        <div class="container">
+            <h2>اختبر معرفتك عن الثقافة النوبية</h2>
+            <form id="quizForm">
+                <!-- Question 1 -->
+                <div class="question">
+                    <p>1. في أي مدينة يقع متحف النوبة؟</p>
+                    <label><input type="radio" name="q1" value="a"> القاهرة</label>
+                    <label><input type="radio" name="q1" value="b"> أسوان</label>
+                    <label><input type="radio" name="q1" value="c"> الإسكندرية</label>
+                </div>
+    
+                <!-- Question 2 -->
+                <div class="question">
+                    <p>2. ما هو اسم أشهر مهرجان نوبي؟</p>
+                    <label><input type="radio" name="q2" value="a"> مهرجان النوبة السنوي</label>
+                    <label><input type="radio" name="q2" value="b"> مهرجان الثقافة النوبية</label>
+                    <label><input type="radio" name="q2" value="c"> مهرجان النيل</label>
+                </div>
+    
+                <!-- Question 3 -->
+                <div class="question">
+                    <p>3. من هو الملك النوبي المشهور في التاريخ؟</p>
+                    <label><input type="radio" name="q3" value="a"> الملك طاوَرِق</label>
+                    <label><input type="radio" name="q3" value="b"> الملك رمسيس الثاني</label>
+                    <label><input type="radio" name="q3" value="c"> الملك فرعون</label>
+                </div>
+    
+                <!-- Question 4 -->
+                <div class="question">
+                    <p>4. أي نهر يشتهر بمروره في المناطق النوبية؟</p>
+                    <label><input type="radio" name="q4" value="a"> نهر الفرات</label>
+                    <label><input type="radio" name="q4" value="b"> نهر النيل</label>
+                    <label><input type="radio" name="q4" value="c"> نهر الأردن</label>
+                </div>
+    
+                <!-- Question 5 -->
+                <div class="question">
+                    <p>5. ماذا يعني مصطلح "النوبة" في اللغة النوبية؟</p>
+                    <label><input type="radio" name="q5" value="a"> الشمس</label>
+                    <label><input type="radio" name="q5" value="b"> النهر</label>
+                    <label><input type="radio" name="q5" value="c"> الذهب</label>
+                </div>
+    
+                <!-- Question 6 -->
+                <div class="question">
+                    <p>6. في أي دولة يمكن العثور على المنطقة النوبية؟</p>
+                    <label><input type="radio" name="q6" value="a"> مصر والسودان</label>
+                    <label><input type="radio" name="q6" value="b"> مصر وليبيا</label>
+                    <label><input type="radio" name="q6" value="c"> السودان فقط</label>
+                </div>
+    
+                <!-- Question 7 -->
+                <div class="question">
+                    <p>7. ماذا يسمى البيت النوبي التقليدي؟</p>
+                    <label><input type="radio" name="q7" value="a"> البيت الأبيض</label>
+                    <label><input type="radio" name="q7" value="b"> البيت النوبي</label>
+                    <label><input type="radio" name="q7" value="c"> المقصورة</label>
+                </div>
+    
+                <!-- Question 8 -->
+                <div class="question">
+                    <p>8. ماذا يسمى الفستان التقليدي للنساء في الثقافة النوبية؟</p>
+                    <label><input type="radio" name="q8" value="a"> الجلابية</label>
+                    <label><input type="radio" name="q8" value="b"> الديري</label>
+                    <label><input type="radio" name="q8" value="c"> الكندورة</label>
+                </div>
+    
+                <!-- Question 9 -->
+                <div class="question">
+                    <p>9. ما هو اللون المميز الذي يعكس الثقافة النوبية؟</p>
+                    <label><input type="radio" name="q9" value="a"> الأزرق</label>
+                    <label><input type="radio" name="q9" value="b"> الأحمر</label>
+                    <label><input type="radio" name="q9" value="c"> الأصفر</label>
+                </div>
+    
+                <!-- Question 10 -->
+                <div class="question">
+                    <p>10. ما هو الاسم التقليدي للرقصة النوبية؟</p>
+                    <label><input type="radio" name="q10" value="a"> الدحة</label>
+                    <label><input type="radio" name="q10" value="b"> الرقص النوبي</label>
+                    <label><input type="radio" name="q10" value="c"> الصوفية</label>
+                </div>
+    
+                <!-- Question 11 -->
+                <div class="question">
+                    <p>11. ما هي أكبر مدينة نوبية في مصر؟</p>
+                    <label><input type="radio" name="q11" value="a"> أسوان</label>
+                    <label><input type="radio" name="q11" value="b"> الأقصر</label>
+                    <label><input type="radio" name="q11" value="c"> قنا</label>
+                </div>
+    
+                <!-- Question 12 -->
+                <div class="question">
+                    <p>12. كيف يطلق على لغة النوبة؟</p>
+                    <label><input type="radio" name="q12" value="a"> اللغة المصرية القديمة</label>
+                    <label><input type="radio" name="q12" value="b"> اللغة النوبية</label>
+                    <label><input type="radio" name="q12" value="c"> اللغة العربية</label>
+                </div>
+    
+                <!-- Question 13 -->
+                <div class="question">
+                    <p>13. ما هو أشهر طعام نوبي؟</p>
+                    <label><input type="radio" name="q13" value="a"> الملوخية</label>
+                    <label><input type="radio" name="q13" value="b"> الكسكس</label>
+                    <label><input type="radio" name="q13" value="c"> الفول المدمس</label>
+                </div>
+    
+                <!-- Question 14 -->
+                <div class="question">
+                    <p>14. من أشهر الصناعات في الثقافة النوبية؟</p>
+                    <label><input type="radio" name="q14" value="a"> صناعة الفخار</label>
+                    <label><input type="radio" name="q14" value="b"> صناعة السجاد</label>
+                    <label><input type="radio" name="q14" value="c"> صناعة المجوهرات</label>
+                </div>
+    
+                <!-- Question 15 -->
+                <div class="question">
+                    <p>15. ماذا تعني كلمة "أسوان" في اللغة النوبية؟</p>
+                    <label><input type="radio" name="q15" value="a"> الحصن</label>
+                    <label><input type="radio" name="q15" value="b"> النهر</label>
+                    <label><input type="radio" name="q15" value="c"> الجبل</label>
+                </div>
+    
+                <!-- Question 16 -->
+                <div class="question">
+                    <p>16. من هي أشهر شخصية نوبية في تاريخ مصر القديمة؟</p>
+                    <label><input type="radio" name="q16" value="a"> الملكة كليوباترا</label>
+                    <label><input type="radio" name="q16" value="b"> الملكة حتشبسوت</label>
+                    <label><input type="radio" name="q16" value="c"> الملكة نفرتيتي</label>
+                </div>
+    
+                <!-- Question 17 -->
+                <div class="question">
+                    <p>17. ما هي الحرفة التي اشتهر بها النوبيون؟</p>
+                    <label><input type="radio" name="q17" value="a"> النجارة</label>
+                    <label><input type="radio" name="q17" value="b"> الخياطة</label>
+                    <label><input type="radio" name="q17" value="c"> الزراعة</label>
+                </div>
+    
+                <!-- Question 18 -->
+                <div class="question">
+                    <p>18. ما هو الموسيقى النوبي التقليدي؟</p>
+                    <label><input type="radio" name="q18" value="a"> المزمار</label>
+                    <label><input type="radio" name="q18" value="b"> العود</label>
+                    <label><input type="radio" name="q18" value="c"> الدف</label>
+                </div>
+    
+                <!-- Question 19 -->
+                <div class="question">
+                    <p>19. ما هو نوع الزهور الذي يعتبر رمزاً للثقافة النوبية؟</p>
+                    <label><input type="radio" name="q19" value="a"> زهرة اللوتس</label>
+                    <label><input type="radio" name="q19" value="b"> زهرة النرجس</label>
+                    <label><input type="radio" name="q19" value="c"> زهرة الأقحوان</label>
+                </div>
+    
+                <!-- Question 20 -->
+                <div class="question">
+                    <p>20. ما هو أشهر موقع أثري نوبي؟</p>
+                    <label><input type="radio" name="q20" value="a"> معبد أبو سمبل</label>
+                    <label><input type="radio" name="q20" value="b"> معبد الكرنك</label>
+                    <label><input type="radio" name="q20" value="c"> معبد الأقصر</label>
+                </div>
+    
+                <button type="button" onclick="checkAnswers()">تقديم الإجابات</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </section>
+
+
+<h2>ahmed elhossin</h2>
+
+    <script>
+
+    function toggleDetails(exhibitId) {
+        var details = document.getElementById(exhibitId);
+        if (details.style.display === "none") {
+            details.style.display = "block";
+        } else {
+            details.style.display = "none";
+        }
+    }
+    function checkAnswers() {
+        var score = 0;
+        var result = document.getElementById('result');
+        var answers = {
+            q1: 'b',
+            q2: 'a',
+            q3: 'a',
+            q4: 'b',
+            q5: 'c',
+            q6: 'a',
+            q7: 'b',
+            q8: 'b',
+            q9: 'a',
+            q10: 'a',
+            q11: 'a',
+            q12: 'b',
+            q13: 'a',
+            q14: 'a',
+            q15: 'a',
+            q16: 'a',
+            q17: 'a',
+            q18: 'c',
+            q19: 'a',
+            q20: 'a'
+        };
+        
+        var form = document.getElementById('quizForm');
+        var userAnswers = new FormData(form);
+        
+        for (let [question, answer] of userAnswers.entries()) {
+            if (answers[question] === answer) {
+                score++;
+            }
+        }
+        
+        result.innerHTML = `لقد أجبت على ${score} من 20 أسئلة بشكل صحيح.`;
+    }
+    </script>
+</body>
+</html>
